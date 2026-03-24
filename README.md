@@ -1,67 +1,52 @@
-# Trainity
+<div align="center">
 
-Trainity es una plataforma de fitness para entrenadores, clientes y atletas independientes.
-Centraliza rutinas, sesiones y métricas para que el entrenamiento sea claro, rápido y accionable.
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0f172a,100:56b8d4&height=120&section=header&text=Trainity%20.github&fontColor=ffffff&fontSize=36&fontAlignY=45" alt="Trainity .github" />
 
-## Roles
-- **Trainer (Entrenador)**: crea rutinas, asigna clientes y revisa progreso.
-- **Client (Cliente)**: recibe rutinas, registra sesiones y reporta RPE/notas.
-- **Independent (Atleta independiente)**: gestiona sus propias rutinas y sesiones.
+### Infraestructura publica para el perfil de organizacion en GitHub
 
-## MVP (estado actual)
-- Registro/login con selección de rol.
-- Creación/edición de rutinas.
-- Asignación de rutinas a clientes.
-- Registro de sesiones (series, reps, peso, RPE, notas).
-- Dashboard con métricas semanales (volumen, adherencia, progreso).
-- Historial y progreso por ejercicio.
-- Alertas simples de inactividad/adherencia.
+<p>
+  <img src="https://img.shields.io/badge/Repo-.github-56b8d4?style=flat-square&labelColor=0f172a" alt=".github repo" />
+  <img src="https://img.shields.io/badge/Visibility-Public-56b8d4?style=flat-square&labelColor=0f172a" alt="Public" />
+  <img src="https://img.shields.io/badge/Purpose-Organization%20Profile-56b8d4?style=flat-square&labelColor=0f172a" alt="Organization profile" />
+</p>
 
-## Principios de producto
-- **Desktop‑first** para entrenadores en gestión/reporting.
-- **Mobile‑first** para logging de sesiones (todos los roles).
-- Interacciones rápidas (logging en segundos).
-- Diseño premium, claro y consistente.
+</div>
 
-## Tech Stack
-- **Frontend**: React 19 + Vite + Tailwind CSS v4
-- **Backend**: Node.js + Express 5
-- **DB**: MongoDB Atlas (Mongoose)
-- **IA (local)**: Ollama (modelos locales)
-- **Deploy**: Vercel (frontend) + hosting gratuito (backend)
+---
 
-## Estructura del repo
-Este repo actúa como workspace AI‑native sin destruir tus repos originales:
+## Que Es Este Repositorio
 
-- `src/trainity-web/` → frontend (repo existente)
-- `src/trainity-api/` → backend (repo existente)
-- `src/shared/` → tipos/contratos compartidos (futuro)
-- `context/` → arquitectura, UX/UI, seguridad y compliance
-- `ai/` → planificación y memoria de tareas
-- `.claude/` → commands, agents, skills
-- `tools/prompts/` → prompts de apoyo
+Este repositorio no contiene el producto de Trainity. Existe para alojar el perfil publico de la organizacion y cualquier configuracion publica minima asociada a GitHub.
 
-## Cómo arrancar
-### Frontend
-```bash
-cd src/trainity-web
-npm install
-npm run dev
+## Estructura
+
+- `profile/README.md`: contenido que GitHub muestra en la pestaña `Overview` de la organizacion
+- configuracion publica ligera asociada al perfil cuando sea necesaria
+
+```text
+.github/
+├─ README.md
+└─ profile/
+   └─ README.md
 ```
 
-### Backend
-```bash
-cd src/trainity-api
-npm install
-npm run dev
-```
+## Por Que Es Publico
 
-## Seguridad y compliance
-Ver:
-- `context/security.md`
-- `context/compliance.md`
-- `context/accessibility.md`
+GitHub exige un repositorio publico llamado `.github` para renderizar un perfil publico de organizacion.
 
-## Nota importante
-Este workspace no reemplaza tus repos originales. Sirve para trabajar con Claude Code + Ollama
-con una capa extra de documentación y skills.
+## Que Si Hace
+
+- da contexto publico sobre Trainity desde GitHub
+- aloja el contenido visible del perfil de organizacion
+- sirve como punto de apoyo para metadata publica ligera
+
+## Que No Vas A Encontrar Aqui
+
+- codigo fuente de la aplicacion
+- documentacion interna de producto
+- roadmaps privados
+- material sensible de operacion
+
+## Nota Operativa
+
+Si Trainity necesita un perfil interno solo para miembros, GitHub soporta un repositorio privado separado llamado `.github-private`.
