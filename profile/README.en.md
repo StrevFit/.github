@@ -7,17 +7,21 @@
   <img src="https://img.shields.io/badge/EN-56b8d4?style=for-the-badge&labelColor=0f172a&color=56b8d4" alt="README in English" />
 </a>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0a0a0a,60:141b2d,100:56b8d4&height=180&section=header&text=Liftnotch&fontColor=ffffff&fontSize=54&fontAlignY=40&desc=Training%20Operating%20System%20for%20Coaches%20and%20Athletes&descAlignY=66" alt="Liftnotch banner" />
+<h1>Liftnotch</h1>
 
-### Product infrastructure for serious training
+<p><strong>Software for serious training.</strong></p>
+<p>Plan better. Log faster. Read progress without noise.</p>
 
 <p>
   <img src="https://img.shields.io/badge/Beta-Open-56b8d4?style=flat-square&labelColor=0f172a" alt="Beta" />
-  <img src="https://img.shields.io/badge/Frontend-React%20%2B%20Vite-56b8d4?style=flat-square&labelColor=0f172a" alt="Frontend" />
-  <img src="https://img.shields.io/badge/Backend-Express%20%2B%20MongoDB-56b8d4?style=flat-square&labelColor=0f172a" alt="Backend" />
-  <img src="https://img.shields.io/badge/Contracts-Zod-56b8d4?style=flat-square&labelColor=0f172a" alt="Contracts" />
-  <img src="https://img.shields.io/badge/Mode-Dark--first-56b8d4?style=flat-square&labelColor=0f172a" alt="Dark first" />
-  <img src="https://img.shields.io/badge/Focus-Mobile%20Logging-56b8d4?style=flat-square&labelColor=0f172a" alt="Mobile logging" />
+  <img src="https://img.shields.io/badge/Stack-React%2019%20%2B%20Express%205-56b8d4?style=flat-square&labelColor=0f172a" alt="Primary stack" />
+  <img src="https://img.shields.io/badge/Core-MongoDB%20%2B%20Zod-56b8d4?style=flat-square&labelColor=0f172a" alt="Core" />
+</p>
+
+<p>
+  <a href="https://liftnotch.com">Website</a> ·
+  <a href="https://liftnotch.com/waitlist">Waitlist</a> ·
+  <a href="mailto:alexmico2006@gmail.com">Contact</a>
 </p>
 
 </div>
@@ -26,34 +30,52 @@
 
 ## Thesis
 
-Liftnotch is being built as a training operating system for coaches and athletes who need speed, operational clarity, and a premium product experience. The focus is not "fitness content." The focus is execution: planning better, logging without friction, and turning training data into usable decisions.
+Liftnotch is being built as a `training operating system` for coaches, clients, and independent athletes. The goal is not to ship another generic fitness app. The goal is to improve real training operations: planning better, logging without friction, and turning data into usable decisions.
 
-> Most application code remains private while the product is under active development. This public profile is focused on architecture, product direction, and ways to engage with the team.
+Most of the application code remains private while the product evolves. This public profile exists to share product direction, engineering principles, and ways to connect with the team.
 
-## What We Are Building
+> Training software should not get in the way during a real session.
+> It should reduce friction, speed up decisions, and survive daily use.
+
+## Where It Creates Value
 
 <table>
   <tr>
-    <td width="50%" valign="top">
-      <h3>Coach Ops</h3>
-      <p>Routines, assignments, follow-up, and daily operations for coaches managing real athlete progress, not scattered spreadsheets.</p>
+    <td width="33%" valign="top">
+      <h3>Plan</h3>
+      <p>Routines, blocks, and assignment flows so programming does not live across messages, notes, and spreadsheets.</p>
     </td>
-    <td width="50%" valign="top">
-      <h3>Session Logging</h3>
-      <p>Mobile-first session logging for real workouts, optimized for speed, context, and minimum friction during training.</p>
+    <td width="33%" valign="top">
+      <h3>Log</h3>
+      <p>Session logging built for the training moment: tap, confirm, move on, and keep the workout going.</p>
     </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>Metrics</h3>
-      <p>Clear metrics for adherence, volume, progression, and operational visibility across a training block.</p>
-    </td>
-    <td width="50%" valign="top">
-      <h3>AI Modules</h3>
-      <p>AI capabilities kept separate from the transactional core for video review, technical feedback, and coach-assisted flows.</p>
+    <td width="33%" valign="top">
+      <h3>Read</h3>
+      <p>Metrics and progress views designed for operational clarity instead of analytical noise.</p>
     </td>
   </tr>
 </table>
+
+## Who It Is For
+
+- `Trainer`: builds routines, assigns clients, and reviews progress through `desktop-first` operations.
+- `Client`: receives programming, logs sessions, and reports context through a `mobile-first` experience.
+- `Independent`: manages personal blocks and sessions without relying on scattered tools.
+
+## Product Principles
+
+- `Desktop-first` for coach ops and management work.
+- `Mobile-first` for session logging during training.
+- Fewer clicks, fewer useless fields, more continuity in critical flows.
+- AI only where it helps, always isolated from the transactional core.
+
+## Product Status
+
+- Role-based signup and login.
+- Routine creation, editing, and assignment.
+- Session logging with sets, reps, load, and notes.
+- Dashboards with exercise progress and weekly metrics.
+- Foundation ready for premium modules and AI-assisted workflows.
 
 ## Architecture
 
@@ -64,73 +86,37 @@ web (React / Vite)
 api (Express)
         |
         v
-db (MongoDB)
+db (MongoDB / Mongoose)
 ```
 
 ### System principles
 
 - `controllers -> services -> repositories -> models`
-- Input validation with `Zod`
-- Clear domain roles: `trainer`, `client`, `independent`
-- Mobile-first logging, desktop-first trainer operations
-- AI modules isolated from the transactional core
+- input validation with `Zod`
+- explicit domain roles: `trainer`, `client`, `independent`
+- frontend designed for product use, not just polished demos
+- AI modules isolated from the core
 
-## Engineering Thesis
+## What We Share Here
 
-<table>
-  <tr>
-    <td width="33%" valign="top">
-      <h3>Speed</h3>
-      <p>We reduce friction in critical flows. The product has to feel fast during a real session, not only in a demo.</p>
-    </td>
-    <td width="33%" valign="top">
-      <h3>Clarity</h3>
-      <p>Clear contracts, explicit ownership, and an interface that does not ask users to parse noise.</p>
-    </td>
-    <td width="33%" valign="top">
-      <h3>Durability</h3>
-      <p>Architecture that is clean enough to evolve without rebuilding the product every few weeks.</p>
-    </td>
-  </tr>
-</table>
+This public profile is used to share:
 
-## For Technical Talent
-
-We care about people who think about product and systems at the same time.
-
-- Engineering with product and UX judgment, not feature output alone.
-- Clean backend boundaries, robust contracts, and real ownership.
-- Frontend work with hierarchy, intention, and perceived performance.
-- Interest in internal tooling, AI-assisted workflows, and execution quality.
-
-## For Partners And Investors
-
-Liftnotch is not trying to compete on content volume. The bet is to build product infrastructure for serious training.
-
-- Coach operations with a focus on daily adoption.
-- Mobile experience designed for the actual training moment.
-- Technical foundation prepared for premium modules and AI-assisted workflows.
-- Product direction driven by systems thinking, not interface polish alone.
-
-## Community
-
-We are opening Liftnotch's public profile to start sharing the direction of the company and create clear entry points for collaboration.
-
-- `Waitlist`: `https://liftnotch.com/waitlist`
-- `Website`: `https://liftnotch.com`
-- `Partnerships`: `alexmico2006@gmail.com`
-- `Technical conversations`: `alexmico2006@gmail.com`
+- product thesis
+- architecture decisions
+- public supporting repositories when relevant
+- entry points for technical or strategic collaboration
 
 ## Contact
 
-- Email: `alexmico2006@gmail.com`
-- Website: `coming soon`
-- Waitlist: `coming soon`
+- Website: `https://liftnotch.com`
+- Waitlist: `https://liftnotch.com/waitlist`
+- General: `alexmico2006@gmail.com`
+- Partnerships: `alexmico2006@gmail.com`
 
 ---
 
 <div align="center">
 
-**Liftnotch is building software for people who actually train.**
+<strong>Liftnotch is building software for people who actually train.</strong>
 
 </div>
