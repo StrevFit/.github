@@ -1,52 +1,48 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0f172a,100:56b8d4&height=120&section=header&text=Liftnotch%20.github&fontColor=ffffff&fontSize=36&fontAlignY=45" alt="Liftnotch .github" />
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0f172a,100:56b8d4&height=120&section=header&text=StrevFit%20/.github&fontColor=ffffff&fontSize=36&fontAlignY=45" alt="StrevFit .github" />
 
-### Infraestructura publica para el perfil de organizacion en GitHub
+<br /><br />
 
 <p>
   <img src="https://img.shields.io/badge/Repo-.github-56b8d4?style=flat-square&labelColor=0f172a" alt=".github repo" />
-  <img src="https://img.shields.io/badge/Visibility-Public-56b8d4?style=flat-square&labelColor=0f172a" alt="Public" />
-  <img src="https://img.shields.io/badge/Purpose-Organization%20Profile-56b8d4?style=flat-square&labelColor=0f172a" alt="Organization profile" />
+  <img src="https://img.shields.io/badge/Visibilidad-Público-56b8d4?style=flat-square&labelColor=0f172a" alt="Public" />
+  <img src="https://img.shields.io/badge/Propósito-Perfil%20de%20organización-56b8d4?style=flat-square&labelColor=0f172a" alt="Organization profile" />
 </p>
 
 </div>
 
 ---
 
-## Que Es Este Repositorio
+## Qué es este repositorio
 
-Este repositorio no contiene el producto de Liftnotch. Existe para alojar el perfil publico de la organizacion y cualquier configuracion publica minima asociada a GitHub.
+Este repositorio contiene el perfil público de la organización **StrevFit** en GitHub.
 
-## Estructura
+No hay código de producto aquí. Lo que sí hay:
 
-- `profile/README.md`: contenido que GitHub muestra en la pestaña `Overview` de la organizacion
-- configuracion publica ligera asociada al perfil cuando sea necesaria
+- **`profile/README.md`** — contenido que GitHub muestra en la pestaña `Overview` de la organización (ES)
+- **`profile/README.en.md`** — versión en inglés del perfil
 
 ```text
 .github/
 ├─ README.md
 └─ profile/
-   └─ README.md
+   ├─ README.md        ← perfil público ES
+   └─ README.en.md     ← perfil público EN
 ```
 
-## Por Que Es Publico
+## Repositorios del producto
 
-GitHub exige un repositorio publico llamado `.github` para renderizar un perfil publico de organizacion.
+| Repo | Descripción |
+|---|---|
+| [strev-web](https://github.com/StrevFit/strev-web) | Frontend React — landing, app, workout session |
+| [strev-api](https://github.com/StrevFit/strev-api) | Backend Express — API REST, pagos, IA |
 
-## Que Si Hace
+## Por qué es público
 
-- da contexto publico sobre Liftnotch desde GitHub
-- aloja el contenido visible del perfil de organizacion
-- sirve como punto de apoyo para metadata publica ligera
+GitHub requiere un repositorio público llamado `.github` para renderizar un perfil público de organización en la pestaña Overview.
 
-## Que No Vas A Encontrar Aqui
+## Contacto
 
-- codigo fuente de la aplicacion
-- documentacion interna de producto
-- roadmaps privados
-- material sensible de operacion
-
-## Nota Operativa
-
-Si Liftnotch necesita un perfil interno solo para miembros, GitHub soporta un repositorio privado separado llamado `.github-private`.
+- Web: [strev.app](https://strev.app)
+- Email: [hola@strev.app](mailto:hola@strev.app)

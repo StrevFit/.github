@@ -1,96 +1,126 @@
 <div align="center">
 
-<h1>Peakly</h1>
+<a href="./README.md">
+  <img src="https://img.shields.io/badge/ES-activo-56b8d4?style=for-the-badge&labelColor=0f172a" alt="Español" />
+</a>
+&nbsp;
+<a href="./README.en.md">
+  <img src="https://img.shields.io/badge/EN-english-475569?style=for-the-badge&labelColor=0f172a" alt="English" />
+</a>
 
-<p><strong>La app de entrenamiento que no te roba tiempo.</strong></p>
-<p>Registra sets en 1–2 taps. Sin fricción. Sin distracción. Solo entrenar.</p>
+<br /><br />
 
-<p>
-  <img src="https://img.shields.io/badge/Lanzamiento-1%20Jun%202026-56b8d4?style=flat-square&labelColor=0f172a" alt="Lanzamiento" />
-  <img src="https://img.shields.io/badge/Stack-React%2019%20%2B%20Express%205-56b8d4?style=flat-square&labelColor=0f172a" alt="Stack principal" />
-  <img src="https://img.shields.io/badge/Core-MongoDB%20%2B%20Zod-56b8d4?style=flat-square&labelColor=0f172a" alt="Core" />
-</p>
+<h1>Strev</h1>
 
-<p>
-  <a href="https://peaklyfit.com">Web</a> ·
-  <a href="https://peaklyfit.com/waitlist">Waitlist</a> ·
-  <a href="mailto:alexmico2006@gmail.com">Contacto</a>
-</p>
+<p><strong>Software de gestión para entrenadores personales freelance.</strong></p>
+<p>Registra un set en 2 taps. Gestiona 30 clientes sin Excel ni WhatsApp. Cobra con Stripe.</p>
+
+<br />
+
+<a href="https://strev.app">
+  <img src="https://img.shields.io/badge/strev.app-visitar-56b8d4?style=flat-square&labelColor=0f172a" alt="strev.app" />
+</a>
+<a href="https://strev.app/waitlist">
+  <img src="https://img.shields.io/badge/Lista%20de%20espera-abierta-22c55e?style=flat-square&labelColor=0f172a" alt="Waitlist abierta" />
+</a>
+<img src="https://img.shields.io/badge/Lanzamiento-1%20Jun%202026-f59e0b?style=flat-square&labelColor=0f172a" alt="Lanzamiento" />
 
 </div>
 
 ---
 
-## Tesis
+## El problema
 
-Peakly se construye como el sistema operativo del entrenamiento para entrenadores, atletas y clientes. La prioridad no es otra app de fitness genérica — es resolver la operativa real: planificar, ejecutar y leer progreso desde un mismo sistema con fricción mínima.
+Los entrenadores personales freelance con 5–30 clientes activos gestionan su negocio con tres herramientas que no hablan entre sí: **Excel** para rutinas y progreso, **WhatsApp** para comunicación, y **notas en papel** durante el entrenamiento. El resultado es horas perdidas cada semana en tareas que no aportan valor al cliente.
 
-> El software de entrenamiento no debería estorbar durante una sesión real.
-> Debería acelerar decisiones, reducir fricción y aguantar uso diario.
+Strev reemplaza ese stack con una sola plataforma optimizada para el flujo real del entrenador.
 
-## Dónde aporta valor
+---
+
+## Para quién es
 
 <table>
   <tr>
-    <td width="33%" valign="top">
-      <h3>Plan</h3>
-      <p>Rutinas, bloques y asignación para que la programación no viva repartida entre mensajes, notas y hojas de cálculo.</p>
+    <td width="50%" valign="top">
+      <h3>Entrenador personal freelance</h3>
+      <p>Crea rutinas, las asigna y personaliza por cliente sin duplicar trabajo. Revisa adherencia y señales de estancamiento desde el dashboard. Cobra suscripciones mensuales o anuales. Exporta todo a Excel si quiere salir.</p>
     </td>
-    <td width="33%" valign="top">
-      <h3>Log</h3>
-      <p>Registro de sesiones pensado para tocar, confirmar y seguir entrenando sin fricción innecesaria.</p>
-    </td>
-    <td width="33%" valign="top">
-      <h3>Read</h3>
-      <p>Métricas y progreso con lectura operativa para decidir el siguiente paso sin ruido analítico.</p>
+    <td width="50%" valign="top">
+      <h3>Atleta independiente</h3>
+      <p>Registra sesiones en 1–2 taps. Ve sus récords personales en el acto. Analiza su técnica con IA. Sin entrenador, sin fricción, sin perder datos.</p>
     </td>
   </tr>
 </table>
 
-## Para quién
+---
 
-- `Trainer` — crea rutinas, asigna clientes y revisa progreso con una operativa `desktop-first`.
-- `Client` — recibe la planificación, registra sesiones con experiencia `mobile-first`.
-- `Independent` — gestiona sus propios bloques y sesiones sin herramientas dispersas.
+## El core loop
 
-## Principios de producto
+```
+Abrir app → ver siguiente ejercicio → registrar set → PR badge → siguiente
+```
 
-- `Mobile-first` para logging durante el entreno.
-- `Desktop-first` para coach ops y gestión.
-- Menos clicks, menos campos inútiles, más continuidad en flujos críticos.
-- IA útil solo si ayuda; siempre desacoplada del core transaccional.
+Todo lo demás — gestión, pagos, métricas, IA — está construido para no añadir fricción a este flujo.
+
+---
+
+## Planes
+
+**Entrenadores**
+
+| Plan | Precio | Clientes | IA / día |
+|---|---|---|---|
+| Free | €0 | 5 | 1 |
+| Pro | €24 / mes | 20 | 5 |
+| Master | €49 / mes | 50 | 10 |
+| Elite | €79 / mes | 100 | 20 |
+
+**Atletas independientes:** Free (€0) · Athlete Pro (€9 / mes)
+
+Descuento anual: **2 meses gratis** en todos los planes de pago.
+
+---
 
 ## Arquitectura
 
-```text
-peakly-web (React / Vite)
-        |
-        v
-peakly-api (Express)
-        |
-        v
-MongoDB / Mongoose
+```
+strev-web (React 19 · Vite · Tailwind · Framer Motion)
+          ↓
+strev-api (Express 5 · Node 22 · Zod · JWT)
+          ↓
+MongoDB Atlas · Cloudflare R2 · Upstash Redis
 ```
 
-- `controllers → services → repositories → models`
-- Validación de entrada con `Zod`
-- Roles de dominio explícitos: `trainer`, `client`, `independent`
+- Capas: `controllers → services → repositories → models`
+- Roles explícitos: `trainer` · `client` · `independent`
+- Dark-first con toggle. Sin dependencias de tema en tiempo de ejecución.
+- IA asíncrona con BullMQ, desacoplada del core transaccional.
+
+---
 
 ## Repositorios
 
 | Repo | Descripción |
-|------|-------------|
-| [peakly-web](https://github.com/PeaklyFit/peakly-web) | Frontend React — landing, dashboard, workout logging |
-| [peakly-api](https://github.com/PeaklyFit/peakly-api) | Backend Express — API REST, auth, gamificación, IA |
+|---|---|
+| [strev-web](https://github.com/StrevFit/strev-web) | Frontend React — landing, dashboard, workout session, métricas |
+| [strev-api](https://github.com/StrevFit/strev-api) | Backend Express — API REST, auth, gamificación, IA, pagos |
 
-## Contacto
+---
 
-- Web: `https://peaklyfit.com`
-- Waitlist: `https://peaklyfit.com/waitlist`
-- General: `alexmico2006@gmail.com`
+## Estado del producto
+
+- Auth, rutinas, sesiones, clientes, métricas, gamificación ✅
+- Pagos Stripe (Pro / Master / Elite / Athlete Pro) ✅
+- Anamnesis digital, análisis IA de vídeo, perfil público del entrenador ✅
+- Monitorización: Sentry + BetterStack + Umami ✅
+- **Lanzamiento público:** 1 de junio de 2026
 
 ---
 
 <div align="center">
-<strong>Software para gente que entrena de verdad.</strong>
+
+**[strev.app](https://strev.app) · [hola@strev.app](mailto:hola@strev.app)**
+
+*Construido para la gente que entrena de verdad.*
+
 </div>

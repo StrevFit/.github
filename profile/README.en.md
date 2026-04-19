@@ -1,122 +1,126 @@
 <div align="center">
 
 <a href="./README.md">
-  <img src="https://img.shields.io/badge/ES-1f2937?style=for-the-badge&labelColor=0f172a&color=1f2937" alt="README en Espanol" />
+  <img src="https://img.shields.io/badge/ES-español-475569?style=for-the-badge&labelColor=0f172a" alt="Español" />
 </a>
+&nbsp;
 <a href="./README.en.md">
-  <img src="https://img.shields.io/badge/EN-56b8d4?style=for-the-badge&labelColor=0f172a&color=56b8d4" alt="README in English" />
+  <img src="https://img.shields.io/badge/EN-active-56b8d4?style=for-the-badge&labelColor=0f172a" alt="English" />
 </a>
 
-<h1>Liftnotch</h1>
+<br /><br />
 
-<p><strong>Software for serious training.</strong></p>
-<p>Plan better. Log faster. Read progress without noise.</p>
+<h1>Strev</h1>
 
-<p>
-  <img src="https://img.shields.io/badge/Beta-Open-56b8d4?style=flat-square&labelColor=0f172a" alt="Beta" />
-  <img src="https://img.shields.io/badge/Stack-React%2019%20%2B%20Express%205-56b8d4?style=flat-square&labelColor=0f172a" alt="Primary stack" />
-  <img src="https://img.shields.io/badge/Core-MongoDB%20%2B%20Zod-56b8d4?style=flat-square&labelColor=0f172a" alt="Core" />
-</p>
+<p><strong>Training management software for freelance personal trainers.</strong></p>
+<p>Log a set in 2 taps. Manage 30 clients without spreadsheets. Get paid with Stripe.</p>
 
-<p>
-  <a href="https://liftnotch.com">Website</a> ·
-  <a href="https://liftnotch.com/waitlist">Waitlist</a> ·
-  <a href="mailto:alexmico2006@gmail.com">Contact</a>
-</p>
+<br />
+
+<a href="https://strev.app">
+  <img src="https://img.shields.io/badge/strev.app-visit-56b8d4?style=flat-square&labelColor=0f172a" alt="strev.app" />
+</a>
+<a href="https://strev.app/waitlist">
+  <img src="https://img.shields.io/badge/Waitlist-open-22c55e?style=flat-square&labelColor=0f172a" alt="Waitlist open" />
+</a>
+<img src="https://img.shields.io/badge/Launch-Jun%201%202026-f59e0b?style=flat-square&labelColor=0f172a" alt="Launch date" />
 
 </div>
 
 ---
 
-## Thesis
+## The problem
 
-Liftnotch is being built as a `training operating system` for coaches, clients, and independent athletes. The goal is not to ship another generic fitness app. The goal is to improve real training operations: planning better, logging without friction, and turning data into usable decisions.
+Freelance personal trainers managing 5–30 active clients run their business across three tools that don't talk to each other: **Excel** for routines and progress, **WhatsApp** for communication, and **handwritten notes** during sessions. The result is hours lost every week on admin work that creates zero value for clients.
 
-Most of the application code remains private while the product evolves. This public profile exists to share product direction, engineering principles, and ways to connect with the team.
+Strev replaces that stack with a single platform built around the trainer's actual workflow.
 
-> Training software should not get in the way during a real session.
-> It should reduce friction, speed up decisions, and survive daily use.
+---
 
-## Where It Creates Value
+## Who it's for
 
 <table>
   <tr>
-    <td width="33%" valign="top">
-      <h3>Plan</h3>
-      <p>Routines, blocks, and assignment flows so programming does not live across messages, notes, and spreadsheets.</p>
+    <td width="50%" valign="top">
+      <h3>Freelance personal trainer</h3>
+      <p>Build routines, assign and personalise them per client without duplicating work. Monitor adherence and stagnation signals from the dashboard. Charge monthly or annual subscriptions. Export everything to Excel whenever you want.</p>
     </td>
-    <td width="33%" valign="top">
-      <h3>Log</h3>
-      <p>Session logging built for the training moment: tap, confirm, move on, and keep the workout going.</p>
-    </td>
-    <td width="33%" valign="top">
-      <h3>Read</h3>
-      <p>Metrics and progress views designed for operational clarity instead of analytical noise.</p>
+    <td width="50%" valign="top">
+      <h3>Independent athlete</h3>
+      <p>Log sessions in 1–2 taps. See personal records instantly. Analyse technique with AI. No coach required, no friction, no lost data.</p>
     </td>
   </tr>
 </table>
 
-## Who It Is For
+---
 
-- `Trainer`: builds routines, assigns clients, and reviews progress through `desktop-first` operations.
-- `Client`: receives programming, logs sessions, and reports context through a `mobile-first` experience.
-- `Independent`: manages personal blocks and sessions without relying on scattered tools.
+## The core loop
 
-## Product Principles
+```
+Open app → see next exercise → log set → PR badge → next exercise
+```
 
-- `Desktop-first` for coach ops and management work.
-- `Mobile-first` for session logging during training.
-- Fewer clicks, fewer useless fields, more continuity in critical flows.
-- AI only where it helps, always isolated from the transactional core.
+Everything else — client management, payments, metrics, AI — is built to stay out of the way of this flow.
 
-## Product Status
+---
 
-- Role-based signup and login.
-- Routine creation, editing, and assignment.
-- Session logging with sets, reps, load, and notes.
-- Dashboards with exercise progress and weekly metrics.
-- Foundation ready for premium modules and AI-assisted workflows.
+## Pricing
+
+**Trainers**
+
+| Plan | Price | Clients | AI / day |
+|---|---|---|---|
+| Free | €0 | 5 | 1 |
+| Pro | €24 / mo | 20 | 5 |
+| Master | €49 / mo | 50 | 10 |
+| Elite | €79 / mo | 100 | 20 |
+
+**Independent athletes:** Free (€0) · Athlete Pro (€9 / mo)
+
+Annual discount: **2 months free** on all paid plans.
+
+---
 
 ## Architecture
 
-```text
-web (React / Vite)
-        |
-        v
-api (Express)
-        |
-        v
-db (MongoDB / Mongoose)
+```
+strev-web (React 19 · Vite · Tailwind · Framer Motion)
+          ↓
+strev-api (Express 5 · Node 22 · Zod · JWT)
+          ↓
+MongoDB Atlas · Cloudflare R2 · Upstash Redis
 ```
 
-### System principles
+- Layers: `controllers → services → repositories → models`
+- Explicit domain roles: `trainer` · `client` · `independent`
+- Dark-first UI with toggle. No runtime theme dependencies.
+- Async AI pipeline with BullMQ, isolated from the transactional core.
 
-- `controllers -> services -> repositories -> models`
-- input validation with `Zod`
-- explicit domain roles: `trainer`, `client`, `independent`
-- frontend designed for product use, not just polished demos
-- AI modules isolated from the core
+---
 
-## What We Share Here
+## Repositories
 
-This public profile is used to share:
+| Repo | Description |
+|---|---|
+| [strev-web](https://github.com/StrevFit/strev-web) | React frontend — landing, dashboard, workout session, metrics |
+| [strev-api](https://github.com/StrevFit/strev-api) | Express backend — REST API, auth, gamification, AI, payments |
 
-- product thesis
-- architecture decisions
-- public supporting repositories when relevant
-- entry points for technical or strategic collaboration
+---
 
-## Contact
+## Product status
 
-- Website: `https://liftnotch.com`
-- Waitlist: `https://liftnotch.com/waitlist`
-- General: `alexmico2006@gmail.com`
-- Partnerships: `alexmico2006@gmail.com`
+- Auth, routines, sessions, clients, metrics, gamification ✅
+- Stripe payments (Pro / Master / Elite / Athlete Pro) ✅
+- Digital anamnesis, AI video analysis, public trainer profile ✅
+- Monitoring: Sentry + BetterStack + Umami ✅
+- **Public launch:** June 1, 2026
 
 ---
 
 <div align="center">
 
-<strong>Liftnotch is building software for people who actually train.</strong>
+**[strev.app](https://strev.app) · [hola@strev.app](mailto:hola@strev.app)**
+
+*Built for people who actually train.*
 
 </div>
